@@ -6,37 +6,40 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>New Agent</title>
+<title>Edit Patient</title>
 </head>
 <body>
     <div align="center">
-        <h2>New Agent</h2>
-        <form:form action="save" method="post" modelAttribute="agent">
+        <h2>Edit Patient</h2>
+        <form:form action="save" method="post" modelAttribute="patient">
             <table border="0" cellpadding="5">
+                <tr>
+                    <td>Patient ID: </td>
+                    <td>${patient.patientid}
+                        <form:hidden path="patientid"/>
+                    </td>
+                </tr>        
                 <tr>
                     <td>First Name: </td>
                     <td><form:input path="firstname" /></td>
                 </tr>
-                <tr>
-                    <td>Middle Name: </td>
-                    <td><form:input path="middlename" /></td>
-                </tr>
+               
                 <tr>
                     <td>Last Name: </td>
                     <td><form:input path="lastname" /></td>
-                </tr>
+                </tr>    
                 <tr>
                     <td>Password: </td>
-                    <td><form:input path="password" /></td>
+                    <td><form:input path="dob" /></td>
                 </tr>
                 <tr>
-                    <td>Phone Number: </td>
-                    <td><form:input path="phone" /></td>
+                    <td>Phone: </td>
+                    <td><form:input path="email" /></td>
                 </tr>
                 <tr>
                     <td>Email Address: </td>
-                    <td><form:input path="emailaddress" /></td>
-                </tr>    
+                    <td><form:input path="password" /></td>
+                </tr> 
                 <tr>
                     <td colspan="2"><input type="submit" value="Save"></td>
                 </tr>                    

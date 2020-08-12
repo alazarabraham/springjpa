@@ -1,4 +1,4 @@
-package net.codejava.agent;
+package net.codejava.patient;
  
 import java.util.List;
 import java.util.Map;
@@ -14,43 +14,43 @@ import org.springframework.web.servlet.ModelAndView;
  
  
 @Controller
-public class AgentController {
+public class PatientController {
  
     @Autowired
-    private AgentService agentService;
+    private PatientService patientService;
  
 	@RequestMapping("/")
 	public ModelAndView home() {
-    List<Agent> listAgent = agentService.listAll();
+    List<Patient> listPatient = patientService.listAll();
     ModelAndView mav = new ModelAndView("index");
-    mav.addObject("listAgent", listAgent);
+    mav.addObject("listPatient", listPatient);
     return mav;
 }
 	@RequestMapping("/new")
 	public String newCustomerForm(Map<String, Object> model) {
-	    Agent agent = new Agent();
-	    model.put("agent", agent);
-	    return "new_agent";
+	    Patient patient = new Patient();
+	    model.put("patient", patient);
+	    return "new_patient";
 	}
 	
 	@RequestMapping(value = "/save", method = RequestMethod.POST)
-	public String saveAgent(@ModelAttribute("agent") Agent agent) {
-    agentService.save(agent);
+	public String savePatient(@ModelAttribute("patient") Patient patient) {
+    patientService.save(patient);
     return "redirect:/";
 	}
     
     @RequestMapping("/edit")
-    public ModelAndView editAgentForm(@RequestParam long agent_id) {
-        ModelAndView mav = new ModelAndView("edit_agent");
-        Agent agent = agentService.get(agent_id);
-        mav.addObject("agent", agent);
+    public ModelAndView editPatientForm(@RequestParam long patientid) {
+        ModelAndView mav = new ModelAndView("edit_patient");
+        Patient patient = patientService.get(patientid);
+        mav.addObject("patient", patient);
      
         return mav;
     }
 
 	@RequestMapping("/delete")
-	public String deleteAgentForm(@RequestParam long agent_id) {
-    agentService.delete(agent_id);
+	public String deletePatientForm(@RequestParam long patientid) {
+    patientService.delete(patientid);
     return "redirect:/";       
 }
 

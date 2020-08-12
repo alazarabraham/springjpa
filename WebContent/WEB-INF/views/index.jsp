@@ -6,40 +6,39 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Agent Manager</title>
+<title>Patient Manager</title>
 </head>
 <body>
 <div align="center">
-    <h2>Agent Manager</h2>
+    <h2>Patient Manager</h2>
     <form method="get" action="search">
         <input type="text" name="keyword" /> &nbsp;
         <input type="submit" value="Search" />
     </form>
-    <h3><a href="/InsuranceManager/new">New Agent</a></h3>
+    <h3><a href="/InsuranceManager/new">New Patient</a></h3>
     <table border="1" cellpadding="5">
         <tr>
-            <th>Agent Id</th>
+            <th>Patient Id</th>
             <th>First Name</th>
-            <th>Middle Name</th>
             <th>Last Name</th>
-            <th>Password</th>
-            <th>Phone Number</th>
-            <th>Email Address</th>
+            <th>Date of Birth</th>
+            <th>Email</th>
+             <th>Password</th>
+            
             
         </tr>
-        <c:forEach items="${listAgent}" var="agent">
+        <c:forEach items="${listPatient}" var="patient">
         <tr>
-            <td>${agent.agent_id}</td>
-            <td>${agent.firstname}</td>
-            <td>${agent.middlename}</td>
-            <td>${agent.lastname}</td>
-            <td>${agent.password}</td>
-            <td>${agent.phone}</td>
-            <td>${agent.emailaddress}</td>
+            <td>${patient.patientid}</td>
+            <td>${patient.firstname}</td>
+            <td>${patient.lastname}</td>
+            <td>${patient.dob}</td>
+            <td>${patient.email}</td>
+            <td>${patient.password}</td>
             <td>
-                <a href="/InsuranceManager/edit?agent_id=${agent.agent_id}">Edit</a>
+                <a href="/InsuranceManager/edit?patient=${patient.patientid}">Edit</a>
                 &nbsp;&nbsp;&nbsp;
-                <a href="/InsuranceManager/delete?agent_id=1=${agent.agent_id}">Delete</a>
+                <a href="/InsuranceManager/delete?patient=${patient.patientid}">Delete</a>
             </td>
         </tr>
         </c:forEach>

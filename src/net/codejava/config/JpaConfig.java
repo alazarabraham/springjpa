@@ -10,7 +10,7 @@ import org.springframework.orm.jpa.LocalEntityManagerFactoryBean;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
  
 @Configuration
-@EnableJpaRepositories(basePackages = {"net.codejava.agent"})
+@EnableJpaRepositories(basePackages = {"net.codejava.patient"})
 @EnableTransactionManagement
 public class JpaConfig {
     @Bean

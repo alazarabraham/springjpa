@@ -7,7 +7,7 @@
      
     <persistence-unit name="SalesDB">
         <properties>
-            <property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost:3306/practice" />
+            <property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost:3306/clinic" />
             <property name="javax.persistence.jdbc.user" value="root" />
             <property name="javax.persistence.jdbc.password" value="markos" />
             <property name="javax.persistence.jdbc.driver" value=

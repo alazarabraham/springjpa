@@ -6,43 +6,33 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Edit Agent</title>
+<title>New Patient</title>
 </head>
 <body>
     <div align="center">
-        <h2>Edit Agent</h2>
-        <form:form action="save" method="post" modelAttribute="agent">
+        <h2>New Patient</h2>
+        <form:form action="save" method="post" modelAttribute="patient">
             <table border="0" cellpadding="5">
-                <tr>
-                    <td>Agent ID: </td>
-                    <td>${agent.agent_id}
-                        <form:hidden path="agent_id"/>
-                    </td>
-                </tr>        
                 <tr>
                     <td>First Name: </td>
                     <td><form:input path="firstname" /></td>
                 </tr>
                 <tr>
-                    <td>Middle Name: </td>
-                    <td><form:input path="middlename" /></td>
-                </tr>
-                <tr>
                     <td>Last Name: </td>
                     <td><form:input path="lastname" /></td>
-                </tr>    
-                <tr>
-                    <td>Password: </td>
-                    <td><form:input path="password" /></td>
                 </tr>
                 <tr>
-                    <td>Phone: </td>
-                    <td><form:input path="phone" /></td>
+                    <td>Password: </td>
+                    <td><form:input path="dob" /></td>
+                </tr>
+                <tr>
+                    <td>Phone Number: </td>
+                    <td><form:input path="email" /></td>
                 </tr>
                 <tr>
                     <td>Email Address: </td>
-                    <td><form:input path="emailaddress" /></td>
-                </tr> 
+                    <td><form:input path="password" /></td>
+                </tr>    
                 <tr>
                     <td colspan="2"><input type="submit" value="Save"></td>
                 </tr>                    
